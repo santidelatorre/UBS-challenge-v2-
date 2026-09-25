@@ -46,6 +46,8 @@ def extras(kind,base):
         if path.exists():out[view]=pd.read_parquet(path);continue
         d=df if view=="original" else corrupt_transactions(df,view,2026)
         if kind=="sparse":x=sparse_features(d,base[view],profiles)
+        elif kind=="gate_only":
+            x=pd.DataFrame({"sparse_eligible":((base[view].amount0_count<3)&(base[view].index.get_level_values("family")!="none")).astype(int)},index=base[view].index)
         elif kind=="pair":
             auxiliary=joblib.load(ROOT/"outputs/v2_pair_learning/model.joblib")
             streams=learned_groups(d,auxiliary["model"],auxiliary["threshold"])
@@ -76,7 +78,7 @@ def hier(q,pn):
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument("--kind",choices=["sparse","pair"],default="sparse");ap.add_argument("--seed",type=int,default=42);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument("--kind",choices=["sparse","pair","gate_only"],default="sparse");ap.add_argument("--seed",type=int,default=42);args=ap.parse_args()
     start=time.perf_counter();base=base_views();extra=extras(args.kind,base)
     ids=base["original"].index.get_level_values(0).unique().to_numpy();y=aligned_target(ids)
     variants={"control":base,args.kind:{v:pd.concat([base[v],extra[v]],axis=1).fillna(-999) for v in VIEWS}}
@@ -114,13 +116,16 @@ def main():
                 print("Matched control reproduced",v,"maxdiff",diff,flush=True)
             cm=cohort_metrics(y,p,base[v])
             hypothesis="Complement strong streams with family-conditioned single/pair evidence only when 3+ amount evidence is absent" if args.kind=="sparse" else "Learned pair compatibility from independent weak anchors repairs stream membership beyond a fixed amount radius"
+            if args.kind=="gate_only":hypothesis="Ablation: distinguish new transaction evidence from merely exposing the redundant missing-candidate indicator"
             meta=dict(hypothesis=hypothesis,baseline_comparison=f"V1 compact seed {args.seed}, exactly reproduced",
                       features=kind,model="unchanged compact LightGBM ranker and none model",parameters=parameters(args.seed),seed=args.seed,
                       candidate_generation="V1 preserved; additional 1/2-event amount components with family-relative semantic/MCC/price/cadence/refund evidence" if args.kind=="sparse" else "V1 plus weak pair graph proposals; calibrated edges, constrained maximum-spanning unions; soft family features",
                       stream_identity="soft semantic/MCC/unlabeled price; no hard assignment",continuation_model="V1 none" if "identity" in kind or kind=="control" else "V1 none architecture with added sparse evidence",
                       protocol="five-fold client CV, all three corruption views grouped; no V2 official access",cohorts=cm,
                       candidate_recall="See v2_diagnostics.json; extra sparse features do not delete V1 candidates",status="screened",conclusion="Apply predeclared v2_protocol.md gate; scores are exploratory")
-            eid=f"v2_{kind}_{v}_s{args.seed}" if args.kind=="sparse" or kind!="control" else f"v2_pair_control_{v}_s{args.seed}"
+            if args.kind=="gate_only":
+                meta.update(candidate_generation="V1 unchanged; no new transaction evidence",stream_identity="V1 unchanged",continuation_model="V1 with redundant indicator only",status="mechanism_ablation")
+            eid=f"v2_{kind}_{v}_s{args.seed}" if args.kind=="sparse" or kind!="control" else f"v2_{args.kind}_control_{v}_s{args.seed}"
             r=record(eid,ids,y,p,metadata=meta,runtime=time.perf_counter()-start)
             # V1's generated table has a disposition column; append in that format.
             ledger=ROOT/"reports/experiment_log.md"
