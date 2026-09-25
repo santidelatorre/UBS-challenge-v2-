@@ -68,3 +68,15 @@ check reproducibility, IDs and submission contract. If no component passes,
 retain V1 and finish the round with explicit negative results and next
 hypotheses. No new official score is necessary for a rejected train-side
 candidate.
+
+## Sparse screen follow-up, declared before multi-seed confirmation
+
+Seed 42 passes the stress/sparse screen but loses about two percentage points
+of strong-cohort accuracy. Test the direct replacement and **one fixed 50%
+blend with V1**, retaining the original 25% legacy contribution. This is a
+mechanism-driven protection against displacement of strong streams, not a
+weight sweep. Candidate weights are therefore either 75% sparse / 25% legacy,
+or 37.5% sparse / 37.5% V1 compact / 25% legacy. Compare the identity-only and
+joint-none ablations under the same predeclared gates. Select the passing
+variant with higher mean stress F1; freeze before the fresh-view check.
+No weight optimization, seed removal or official-validation repair follows.
