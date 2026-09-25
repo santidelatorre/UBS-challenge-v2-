@@ -1,0 +1,88 @@
+{
+  "v1_official_macro_f1": 0.6194934236214421,
+  "v2_official_macro_f1": null,
+  "accepted_result_macro_f1": 0.6194934236214421,
+  "accepted_delta": 0.0,
+  "status": "retain_v1_candidate_rejected_before_official_access",
+  "official_candidate_accesses": 0,
+  "reason": "keep4 removal-cohort loss exceeds the predeclared 0.010 accuracy tolerance",
+  "keep4_baseline_correct": 653,
+  "keep4_candidate_correct": 643,
+  "keep4_clients": 901,
+  "keep4_accuracy_delta": -0.011098779134295245,
+  "gate_tolerance": -0.01,
+  "mean_fresh_stress_gain": 0.013464686610408894,
+  "submission": "submissions/submission.csv",
+  "clean_build": {
+    "created_at": "2026-09-25T07:38:28.401769+00:00",
+    "git_commit": "ff18f792b5881c67a33fba09a53ea9b91f7776be",
+    "source_sha256": "bb2fb9721712cb5f55bccad39b9a54355730acdcb58cba05d25320416d03ce8b",
+    "raw_manifest": {
+      "sample_submission.csv": {
+        "bytes": 14045,
+        "sha256": "53a24cd23d680c2573f5b048dd69d1747f20adc45e308593d914ee13e8d00ed2"
+      },
+      "test_transactions.jsonl": {
+        "bytes": 15168868,
+        "sha256": "cc6083d6e0d4f4787f0766d6eb22fd5d267194c9a71a04da81e60dc23f5463e4"
+      },
+      "train_labels.csv": {
+        "bytes": 53609,
+        "sha256": "cab0ec46064348f970ffafdd4f42a12d41a8db660e9db835e7235851b556ff9f"
+      },
+      "train_transactions.jsonl": {
+        "bytes": 29448956,
+        "sha256": "ba0902b33b1181921ee5b1f8f445693201c0968ca52d70a92e12cbb114e7d70a"
+      },
+      "unlabeled_pretrain_transactions.jsonl": {
+        "bytes": 149701978,
+        "sha256": "660181aea49a68820f724ba30a1a5cf8ace8158a8aef11bc8446cc577d3466a3"
+      },
+      "valid_labels.csv": {
+        "bytes": 26719,
+        "sha256": "979bd9b69253084fc9e2b1ef473c07a628a8b18091169051ba304cfed0fb5642"
+      },
+      "valid_transactions.jsonl": {
+        "bytes": 14788172,
+        "sha256": "2c30941d49ca20f7b082526407f24529c5a704205610373eff952f4f444a3622"
+      }
+    },
+    "clean_raw_build": true,
+    "training_clients": 2000,
+    "training_split": "train only",
+    "seeds": [
+      42,
+      17,
+      2026
+    ],
+    "sparse_weight": 0.375,
+    "variant": "sparse_joint",
+    "legacy_weight": 0.25,
+    "corruption_seed": 2026,
+    "seconds": 486.7815520999975,
+    "device": "cuda",
+    "official_labels_used": false
+  },
+  "baseline_weights_rebuilt_identically": {
+    "profiles_equal": true,
+    "compact_columns_equal": true,
+    "training_ids_equal": true,
+    "compact_models_equal": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "legacy_models_equal": [
+      true,
+      true,
+      true
+    ]
+  },
+  "candidate_model_sha256": "77b6a5a8f7dbc1f98a7f2ed1673f46bb2047b5aacdd2afddff1a6c3c11c6bbda",
+  "predictive_source_commit": "ff18f792b5881c67a33fba09a53ea9b91f7776be",
+  "second_candidate_rebuild": false,
+  "second_rebuild_reason": "Rejected before official evaluation; another identical fit would not repair the failed gate"
+}

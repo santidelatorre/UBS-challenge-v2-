@@ -1,4 +1,5 @@
 """Comparable soft eligibility recall for learned pair proposals, train only."""
+import v2_bootstrap
 import json
 import numpy as np
 import pandas as pd

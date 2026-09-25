@@ -3,6 +3,7 @@
 Models are the saved client-OOF fits; no model is fitted on a stress target.
 Target labels select a proxy stream only in the explicit removal diagnostic.
 """
+import v2_bootstrap
 import argparse
 import json
 import time

@@ -1,4 +1,5 @@
 """Fit weak pair compatibility using disjoint unlabeled clients only."""
+import v2_bootstrap
 import json
 import time
 import joblib

@@ -1,4 +1,5 @@
 """Raw-data V2 train/predict/evaluate. Official access requires a freeze file."""
+import v2_bootstrap
 import argparse
 import hashlib
 import json

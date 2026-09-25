@@ -1,0 +1,7 @@
+view,model,wrong_family,family_to_none,none_to_family
+original,V1,409,97,122
+original,V2 candidate,384,75,122
+valid_like,V1,401,144,117
+valid_like,V2 candidate,401,126,115
+test_like,V1,402,194,109
+test_like,V2 candidate,398,182,109

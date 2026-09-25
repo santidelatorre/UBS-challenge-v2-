@@ -3,6 +3,7 @@
 Candidate correspondence is a proxy, not ground-truth stream identity. The
 operational model always has eight rows, so proxy coverage is not its ceiling.
 """
+import v2_bootstrap
 import hashlib
 import json
 import subprocess

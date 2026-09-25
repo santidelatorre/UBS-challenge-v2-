@@ -47,6 +47,22 @@
 - Tests cover sparse gating, currency/client separation, event ordering,
   ID-renaming invariance, ignored label columns, pair symmetry and weak-label
   isolation, in addition to the 16 frozen reference tests.
+- Final disposition: fresh corruption passed, but the four-observation
+  affected cohort lost 1.1099 accuracy points against a fixed one-point
+  tolerance. The gate was not relaxed. No V2 official-model access occurred,
+  and no official freeze or new submission was created. V1 remains selected.
+- A reporting-only rerun encountered an editable import resolving to another
+  checkout and stopped at its first missing artifact read. All V2 entry
+  points now pin imports to this repository's `src` and assert the root.
+  Completed experiment records carry this branch's commits/fingerprints;
+  reports and embedded-model equality checks were regenerated with local
+  imports. The fix changes script import routing, not predictive logic.
+- Final checks: 21 tests pass. The ledger contains 69 V2 client-evaluation
+  records, including repeated controls and multiple views of the same fits;
+  these are not 69 independent conceptual experiments. The separate weak-pair
+  auxiliary calibration receipt is `v2_pair_learning.json`. Research tested
+  two representation mechanisms, one gate-only ablation and one predeclared
+  conservative blend.
 
 Residual limitations: semantic/price candidate coverage is a proxy for
 unknown stream identity; synthetic corruption is not a verified generator;

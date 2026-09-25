@@ -1,4 +1,5 @@
 """Predeclared sparse ensemble comparison using train-side evidence only."""
+import v2_bootstrap
 import json
 import time
 import numpy as np

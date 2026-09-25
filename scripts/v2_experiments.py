@@ -1,4 +1,5 @@
 """Matched V1/V2 client CV. All official labels remain outside this runner."""
+import v2_bootstrap
 import argparse
 import json
 import time

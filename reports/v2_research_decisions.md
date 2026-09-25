@@ -10,7 +10,7 @@ falsification exercise and its limitations.
 
 ## Experiments and decisions
 
-1. **Gated sparse expert: retain as complementary evidence.** New 1/2-event
+1. **Gated sparse expert: promising, not accepted for deployment.** New 1/2-event
    amount components expose family-relative semantic, MCC, price, recency,
    cadence, currency-separated and refund evidence. New features exist only
    for rows without a V1 3+ amount candidate. V1 stream construction is
@@ -28,12 +28,13 @@ falsification exercise and its limitations.
    violates the predeclared one-point limit. A fixed 50% blend was declared
    after the first-seed tradeoff, before multi-seed confirmation and official
    access. No continuous weight tuning was performed.
-4. **Conservative blend: selected on existing train views.** Weights are
+4. **Conservative blend: selected on existing train views, rejected by the
+   final removal gate.** Weights are
    37.5% sparse, 37.5% original compact and 25% original legacy. Mean stress
    gain is +0.009702; sparse accuracy gains 6.55 points; all strong-cohort
    changes remain within the gate. Original OOF gains +0.026323. All seeds
    are retained. Fresh-view and official outcomes are recorded in
-   `v2_results.md`; these may still refute transfer.
+   `v2_results.md`; the later removal gate rejected it before official access.
 5. **Weak pair identity: reject.** From 10,000 disjoint unlabeled clients,
    7,319 conservative anchors yielded 272,633 positive/hard-negative pairs.
    A small LightGBM model fitted on 8,000 clients and calibrated on 2,000
@@ -53,6 +54,24 @@ falsification exercise and its limitations.
    the gate explicit. This check was added before official freeze and did
    not change the selected blend.
 
+## Final gate and disposition
+
+Fresh corruption improves mean F1 by **0.013465**, with essentially unchanged
+strong-cohort accuracy. Removing observations to two or one events improves
+the affected cohort's accuracy by 2.22 and 19.31 percentage points. However,
+the four-event view loses ten correct clients out of 901 (653 to 643), a
+1.1099-point accuracy loss against the predeclared one-point tolerance.
+Despite gains in full-sample F1, the selected candidate fails that strict
+gate. The threshold, features and blend were not relaxed after the result.
+
+**Retain V1; no V2 official access, no V2 submission.** V2's official score is
+unknown. This is not evidence that the candidate would lose on official
+validation; it is an acceptance-policy failure that prevents claiming a
+robust improvement. The near miss is reported rather than silently turned
+into a pass. A clean raw build was completed; its embedded V1 models match
+all nine frozen estimator serializations. A second candidate build was not
+useful after the gate failure.
+
 ## Revised theory
 
 Small streams contain usable information that was largely hidden by the
@@ -71,17 +90,21 @@ for a larger network.
 
 ## Next hypotheses, ranked by expected value
 
-1. Family-conditioned identity on ambiguous, same-family/overlapping-price
+1. Sparse evidence that preserves competition against plausible three/four-
+   event streams. Use new client-safe selection splits and a newly declared
+   evaluation-only stress seed; the existing fresh/removal suite is now
+   exploratory information. Do not simply tune a weight to pass keep4.
+2. Family-conditioned identity on ambiguous, same-family/overlapping-price
    hard negatives, with a separate auxiliary evaluation that tests departures
    from the anchor definitions. Keep a downstream transfer gate.
-2. Continuation on already recovered candidates, using several historical
+3. Continuation on already recovered candidates, using several historical
    cutoffs and explicit cancellation/refund trajectories. The current
    none-only oracle and V1's failed auxiliary transfer limit expected value;
    do not assume observed historical recurrence equals the official target.
-3. An independent shifted labeled evaluation set or authoritative generator
+4. An independent shifted labeled evaluation set or authoritative generator
    clarification would reduce selection uncertainty more than another small
    holdout-informed adjustment.
-4. A small set/sequence model remains deferred: the cheap learned-pair model
+5. A small set/sequence model remains deferred: the cheap learned-pair model
    did not establish the transfer evidence needed to justify it.
 
 No survival model or neural model was executed in this focused round. They
