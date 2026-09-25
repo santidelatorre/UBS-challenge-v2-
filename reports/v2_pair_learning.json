@@ -1,0 +1,34 @@
+{
+  "auxiliary_only": true,
+  "challenge_labels_used": false,
+  "source_clients": 10000,
+  "fit_clients": 8000,
+  "calibration_clients": 2000,
+  "pairs": 272633,
+  "positive_pairs": 138911,
+  "negative_pairs": 133722,
+  "anchors": {
+    "anchor_streams": 7319,
+    "anchor_events": 69990
+  },
+  "heldout_fresh_corruption_auc": 0.9978295350593167,
+  "heldout_fresh_corruption_ap": 0.9976767219649392,
+  "threshold": 0.5014884486560583,
+  "threshold_rule": "maximum weak-label recall subject to precision >= .95 and threshold >= .5, held-out auxiliary clients",
+  "auxiliary_precision": 0.9752810608244451,
+  "auxiliary_recall": 0.9913559446194418,
+  "parameters": {
+    "n_estimators": 180,
+    "num_leaves": 15,
+    "learning_rate": 0.04,
+    "min_child_samples": 150,
+    "reg_lambda": 10,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 6113
+  },
+  "seed": 6113,
+  "runtime_seconds": 83.13924869999755,
+  "source_sha256": "4d71ad44f1c3a96398d170127c7cbc27e1f311f997105c696659a8ebd894f97c",
+  "limitations": "Weak stream IDs are biased to regular stable-price anchored streams. Auxiliary calibration is not independent evaluation after threshold selection. No true stream IDs exist; downstream challenge CV is decisive."
+}
