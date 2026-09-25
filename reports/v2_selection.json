@@ -1,0 +1,621 @@
+{
+  "baseline": {
+    "original": {
+      "macro_f1": 0.6553053958609809,
+      "cohorts": {
+        "strong": {
+          "n": 1106,
+          "accuracy": 0.7703435804701627,
+          "macro_f1": 0.6768134769253531
+        },
+        "sparse": {
+          "n": 297,
+          "accuracy": 0.15151515151515152,
+          "macro_f1": 0.15181201711108705
+        },
+        "none": {
+          "n": 597,
+          "accuracy": 0.7956448911222781,
+          "macro_f1": 0.11077425373134328
+        },
+        "music_software_streaming": {
+          "n": 618,
+          "accuracy": 0.6407766990291263,
+          "macro_f1": 0.27849221478223074
+        },
+        "wrong_family_errors": 409,
+        "family_to_none_errors": 97,
+        "none_to_family_errors": 122
+      }
+    },
+    "valid_like": {
+      "macro_f1": 0.6373666228277337,
+      "cohorts": {
+        "strong": {
+          "n": 1110,
+          "accuracy": 0.7450450450450451,
+          "macro_f1": 0.6637275708470088
+        },
+        "sparse": {
+          "n": 293,
+          "accuracy": 0.10580204778156997,
+          "macro_f1": 0.10849603005129718
+        },
+        "none": {
+          "n": 597,
+          "accuracy": 0.8040201005025126,
+          "macro_f1": 0.11142061281337047
+        },
+        "music_software_streaming": {
+          "n": 618,
+          "accuracy": 0.580906148867314,
+          "macro_f1": 0.2599526709835871
+        },
+        "wrong_family_errors": 401,
+        "family_to_none_errors": 144,
+        "none_to_family_errors": 117
+      }
+    },
+    "test_like": {
+      "macro_f1": 0.6131573211249259,
+      "cohorts": {
+        "strong": {
+          "n": 1117,
+          "accuracy": 0.7045658012533572,
+          "macro_f1": 0.6400101977757489
+        },
+        "sparse": {
+          "n": 286,
+          "accuracy": 0.06993006993006994,
+          "macro_f1": 0.06943691724886458
+        },
+        "none": {
+          "n": 597,
+          "accuracy": 0.8174204355108877,
+          "macro_f1": 0.11244239631336406
+        },
+        "music_software_streaming": {
+          "n": 618,
+          "accuracy": 0.5226537216828478,
+          "macro_f1": 0.2411144521962609
+        },
+        "wrong_family_errors": 402,
+        "family_to_none_errors": 194,
+        "none_to_family_errors": 109
+      }
+    }
+  },
+  "candidates": {
+    "sparse_identity_w0.75": {
+      "variant": "sparse_identity",
+      "sparse_weight": 0.75,
+      "views": {
+        "original": {
+          "macro_f1": 0.6957696986279465,
+          "cohorts": {
+            "strong": {
+              "n": 1106,
+              "accuracy": 0.7603978300180831,
+              "macro_f1": 0.6684114275847901
+            },
+            "sparse": {
+              "n": 297,
+              "accuracy": 0.43434343434343436,
+              "macro_f1": 0.42280632786719163
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7822445561139029,
+              "macro_f1": 0.10972744360902256
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.6747572815533981,
+              "macro_f1": 0.2899192053384344
+            },
+            "wrong_family_errors": 355,
+            "family_to_none_errors": 78,
+            "none_to_family_errors": 130
+          }
+        },
+        "valid_like": {
+          "macro_f1": 0.6565730275166742,
+          "cohorts": {
+            "strong": {
+              "n": 1110,
+              "accuracy": 0.7342342342342343,
+              "macro_f1": 0.6539895331800103
+            },
+            "sparse": {
+              "n": 293,
+              "accuracy": 0.2764505119453925,
+              "macro_f1": 0.2775650553919795
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7889447236180904,
+              "macro_f1": 0.11025280898876405
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.6003236245954693,
+              "macro_f1": 0.2657903439153439
+            },
+            "wrong_family_errors": 381,
+            "family_to_none_errors": 126,
+            "none_to_family_errors": 126
+          }
+        },
+        "test_like": {
+          "macro_f1": 0.6305016722576244,
+          "cohorts": {
+            "strong": {
+              "n": 1117,
+              "accuracy": 0.6991942703670546,
+              "macro_f1": 0.634177121458699
+            },
+            "sparse": {
+              "n": 286,
+              "accuracy": 0.2097902097902098,
+              "macro_f1": 0.21285634572786483
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8040201005025126,
+              "macro_f1": 0.11142061281337047
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5275080906148867,
+              "macro_f1": 0.2410112793432158
+            },
+            "wrong_family_errors": 385,
+            "family_to_none_errors": 177,
+            "none_to_family_errors": 117
+          }
+        }
+      },
+      "gate": {
+        "mean_stress_gain": 0.018275377910819512,
+        "sparse_accuracy_gain": 0.15525430201198118,
+        "strong_accuracy_deltas": {
+          "original": -0.009945750452079571,
+          "valid_like": -0.010810810810810811,
+          "test_like": -0.0053715308863026
+        },
+        "original_gain": 0.040464302766965554,
+        "matched_seed_stress_gains": [
+          0.02063694822747364,
+          0.020380710746157216,
+          0.02168735818185974
+        ],
+        "passed": false
+      }
+    },
+    "sparse_identity_w0.375": {
+      "variant": "sparse_identity",
+      "sparse_weight": 0.375,
+      "views": {
+        "original": {
+          "macro_f1": 0.6780558218725773,
+          "cohorts": {
+            "strong": {
+              "n": 1106,
+              "accuracy": 0.779385171790235,
+              "macro_f1": 0.6846663729000115
+            },
+            "sparse": {
+              "n": 297,
+              "accuracy": 0.2558922558922559,
+              "macro_f1": 0.2514077618787987
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7906197654941374,
+              "macro_f1": 0.11038353601496725
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.6650485436893204,
+              "macro_f1": 0.28646869646238465
+            },
+            "wrong_family_errors": 380,
+            "family_to_none_errors": 85,
+            "none_to_family_errors": 125
+          }
+        },
+        "valid_like": {
+          "macro_f1": 0.6422112152794068,
+          "cohorts": {
+            "strong": {
+              "n": 1110,
+              "accuracy": 0.7414414414414414,
+              "macro_f1": 0.6601756846834645
+            },
+            "sparse": {
+              "n": 293,
+              "accuracy": 0.15358361774744028,
+              "macro_f1": 0.15606865032751122
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8006700167504187,
+              "macro_f1": 0.11116279069767442
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5857605177993528,
+              "macro_f1": 0.2616270488890555
+            },
+            "wrong_family_errors": 398,
+            "family_to_none_errors": 137,
+            "none_to_family_errors": 119
+          }
+        },
+        "test_like": {
+          "macro_f1": 0.6189838929012002,
+          "cohorts": {
+            "strong": {
+              "n": 1117,
+              "accuracy": 0.7063563115487914,
+              "macro_f1": 0.6423875682967957
+            },
+            "sparse": {
+              "n": 286,
+              "accuracy": 0.1048951048951049,
+              "macro_f1": 0.10666884259114878
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8090452261306532,
+              "macro_f1": 0.11180555555555556
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5258899676375405,
+              "macro_f1": 0.24202117494171158
+            },
+            "wrong_family_errors": 395,
+            "family_to_none_errors": 189,
+            "none_to_family_errors": 114
+          }
+        }
+      },
+      "gate": {
+        "mean_stress_gain": 0.005335582113973669,
+        "sparse_accuracy_gain": 0.041373302465452635,
+        "strong_accuracy_deltas": {
+          "original": 0.009041591320072317,
+          "valid_like": -0.003603603603603678,
+          "test_like": 0.0017905102954342
+        },
+        "original_gain": 0.02275042601159638,
+        "matched_seed_stress_gains": [
+          0.02063694822747364,
+          0.020380710746157216,
+          0.02168735818185974
+        ],
+        "passed": true
+      }
+    },
+    "sparse_joint_w0.75": {
+      "variant": "sparse_joint",
+      "sparse_weight": 0.75,
+      "views": {
+        "original": {
+          "macro_f1": 0.7026652903402403,
+          "cohorts": {
+            "strong": {
+              "n": 1106,
+              "accuracy": 0.759493670886076,
+              "macro_f1": 0.6681212493938046
+            },
+            "sparse": {
+              "n": 297,
+              "accuracy": 0.4781144781144781,
+              "macro_f1": 0.4524894666901995
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7889447236180904,
+              "macro_f1": 0.11025280898876405
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.6877022653721683,
+              "macro_f1": 0.29213841360146975
+            },
+            "wrong_family_errors": 359,
+            "family_to_none_errors": 62,
+            "none_to_family_errors": 126
+          }
+        },
+        "valid_like": {
+          "macro_f1": 0.6605956206222272,
+          "cohorts": {
+            "strong": {
+              "n": 1110,
+              "accuracy": 0.7306306306306306,
+              "macro_f1": 0.6517252866360139
+            },
+            "sparse": {
+              "n": 293,
+              "accuracy": 0.3242320819112628,
+              "macro_f1": 0.31134213217398776
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7889447236180904,
+              "macro_f1": 0.11025280898876405
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.610032362459547,
+              "macro_f1": 0.268341012025613
+            },
+            "wrong_family_errors": 389,
+            "family_to_none_errors": 108,
+            "none_to_family_errors": 126
+          }
+        },
+        "test_like": {
+          "macro_f1": 0.6387668484274592,
+          "cohorts": {
+            "strong": {
+              "n": 1117,
+              "accuracy": 0.6965085049239033,
+              "macro_f1": 0.6322265454456291
+            },
+            "sparse": {
+              "n": 286,
+              "accuracy": 0.2692307692307692,
+              "macro_f1": 0.2656287442767954
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8107202680067002,
+              "macro_f1": 0.11193339500462535
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5420711974110033,
+              "macro_f1": 0.24464361665809536
+            },
+            "wrong_family_errors": 388,
+            "family_to_none_errors": 160,
+            "none_to_family_errors": 113
+          }
+        }
+      },
+      "gate": {
+        "mean_stress_gain": 0.0244192625485134,
+        "sparse_accuracy_gain": 0.20886536671519604,
+        "strong_accuracy_deltas": {
+          "original": -0.010849909584086714,
+          "valid_like": -0.01441441441441449,
+          "test_like": -0.008057296329453956
+        },
+        "original_gain": 0.04735989447925937,
+        "matched_seed_stress_gains": [
+          0.024817708883946632,
+          0.02654661248553719,
+          0.034160722402894694
+        ],
+        "passed": false
+      }
+    },
+    "sparse_joint_w0.375": {
+      "variant": "sparse_joint",
+      "sparse_weight": 0.375,
+      "views": {
+        "original": {
+          "macro_f1": 0.6816288761490779,
+          "cohorts": {
+            "strong": {
+              "n": 1106,
+              "accuracy": 0.7784810126582279,
+              "macro_f1": 0.6841675592675698
+            },
+            "sparse": {
+              "n": 297,
+              "accuracy": 0.27946127946127947,
+              "macro_f1": 0.26918294130762815
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.7956448911222781,
+              "macro_f1": 0.11077425373134328
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.6666666666666666,
+              "macro_f1": 0.28664157484308805
+            },
+            "wrong_family_errors": 384,
+            "family_to_none_errors": 75,
+            "none_to_family_errors": 122
+          }
+        },
+        "valid_like": {
+          "macro_f1": 0.6474369278747659,
+          "cohorts": {
+            "strong": {
+              "n": 1110,
+              "accuracy": 0.7405405405405405,
+              "macro_f1": 0.6597885219582937
+            },
+            "sparse": {
+              "n": 293,
+              "accuracy": 0.18430034129692832,
+              "macro_f1": 0.18533627952973558
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8073701842546064,
+              "macro_f1": 0.11167747914735866
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5938511326860841,
+              "macro_f1": 0.2639976938054589
+            },
+            "wrong_family_errors": 401,
+            "family_to_none_errors": 126,
+            "none_to_family_errors": 115
+          }
+        },
+        "test_like": {
+          "macro_f1": 0.6224911815342833,
+          "cohorts": {
+            "strong": {
+              "n": 1117,
+              "accuracy": 0.7054610564010743,
+              "macro_f1": 0.6413700050131748
+            },
+            "sparse": {
+              "n": 286,
+              "accuracy": 0.12237762237762238,
+              "macro_f1": 0.124008469576083
+            },
+            "none": {
+              "n": 597,
+              "accuracy": 0.8174204355108877,
+              "macro_f1": 0.11244239631336406
+            },
+            "music_software_streaming": {
+              "n": 618,
+              "accuracy": 0.5307443365695793,
+              "macro_f1": 0.2430955772622439
+            },
+            "wrong_family_errors": 398,
+            "family_to_none_errors": 182,
+            "none_to_family_errors": 109
+          }
+        }
+      },
+      "gate": {
+        "mean_stress_gain": 0.009702082728194783,
+        "sparse_accuracy_gain": 0.0654729229814554,
+        "strong_accuracy_deltas": {
+          "original": 0.008137432188065175,
+          "valid_like": -0.0045045045045045695,
+          "test_like": 0.0008952551477170445
+        },
+        "original_gain": 0.026323480288096945,
+        "matched_seed_stress_gains": [
+          0.024817708883946632,
+          0.02654661248553719,
+          0.034160722402894694
+        ],
+        "passed": true
+      }
+    }
+  },
+  "selected": {
+    "variant": "sparse_joint",
+    "sparse_weight": 0.375,
+    "views": {
+      "original": {
+        "macro_f1": 0.6816288761490779,
+        "cohorts": {
+          "strong": {
+            "n": 1106,
+            "accuracy": 0.7784810126582279,
+            "macro_f1": 0.6841675592675698
+          },
+          "sparse": {
+            "n": 297,
+            "accuracy": 0.27946127946127947,
+            "macro_f1": 0.26918294130762815
+          },
+          "none": {
+            "n": 597,
+            "accuracy": 0.7956448911222781,
+            "macro_f1": 0.11077425373134328
+          },
+          "music_software_streaming": {
+            "n": 618,
+            "accuracy": 0.6666666666666666,
+            "macro_f1": 0.28664157484308805
+          },
+          "wrong_family_errors": 384,
+          "family_to_none_errors": 75,
+          "none_to_family_errors": 122
+        }
+      },
+      "valid_like": {
+        "macro_f1": 0.6474369278747659,
+        "cohorts": {
+          "strong": {
+            "n": 1110,
+            "accuracy": 0.7405405405405405,
+            "macro_f1": 0.6597885219582937
+          },
+          "sparse": {
+            "n": 293,
+            "accuracy": 0.18430034129692832,
+            "macro_f1": 0.18533627952973558
+          },
+          "none": {
+            "n": 597,
+            "accuracy": 0.8073701842546064,
+            "macro_f1": 0.11167747914735866
+          },
+          "music_software_streaming": {
+            "n": 618,
+            "accuracy": 0.5938511326860841,
+            "macro_f1": 0.2639976938054589
+          },
+          "wrong_family_errors": 401,
+          "family_to_none_errors": 126,
+          "none_to_family_errors": 115
+        }
+      },
+      "test_like": {
+        "macro_f1": 0.6224911815342833,
+        "cohorts": {
+          "strong": {
+            "n": 1117,
+            "accuracy": 0.7054610564010743,
+            "macro_f1": 0.6413700050131748
+          },
+          "sparse": {
+            "n": 286,
+            "accuracy": 0.12237762237762238,
+            "macro_f1": 0.124008469576083
+          },
+          "none": {
+            "n": 597,
+            "accuracy": 0.8174204355108877,
+            "macro_f1": 0.11244239631336406
+          },
+          "music_software_streaming": {
+            "n": 618,
+            "accuracy": 0.5307443365695793,
+            "macro_f1": 0.2430955772622439
+          },
+          "wrong_family_errors": 398,
+          "family_to_none_errors": 182,
+          "none_to_family_errors": 109
+        }
+      }
+    },
+    "gate": {
+      "mean_stress_gain": 0.009702082728194783,
+      "sparse_accuracy_gain": 0.0654729229814554,
+      "strong_accuracy_deltas": {
+        "original": 0.008137432188065175,
+        "valid_like": -0.0045045045045045695,
+        "test_like": 0.0008952551477170445
+      },
+      "original_gain": 0.026323480288096945,
+      "matched_seed_stress_gains": [
+        0.024817708883946632,
+        0.02654661248553719,
+        0.034160722402894694
+      ],
+      "passed": true
+    }
+  },
+  "decision": "No official access until fresh stress passes; no fresh-view retuning"
+}
