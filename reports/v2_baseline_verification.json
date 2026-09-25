@@ -1,0 +1,59 @@
+{
+  "branch": "research/v2-stream-identity",
+  "starting_commit": "e4aa4c58175242e198cefd32d6ac4558145523af",
+  "audit_commit": "e4aa4c58175242e198cefd32d6ac4558145523af",
+  "tag": "baseline-v1-0.619493",
+  "tag_object": "51ef1fac411e9c1f082eabf8e6bd5684420a6cf5",
+  "tag_commit": "e4aa4c58175242e198cefd32d6ac4558145523af",
+  "raw_hashes_verified": {
+    "sample_submission.csv": {
+      "bytes": 14045,
+      "sha256": "53a24cd23d680c2573f5b048dd69d1747f20adc45e308593d914ee13e8d00ed2"
+    },
+    "test_transactions.jsonl": {
+      "bytes": 15168868,
+      "sha256": "cc6083d6e0d4f4787f0766d6eb22fd5d267194c9a71a04da81e60dc23f5463e4"
+    },
+    "train_labels.csv": {
+      "bytes": 53609,
+      "sha256": "cab0ec46064348f970ffafdd4f42a12d41a8db660e9db835e7235851b556ff9f"
+    },
+    "train_transactions.jsonl": {
+      "bytes": 29448956,
+      "sha256": "ba0902b33b1181921ee5b1f8f445693201c0968ca52d70a92e12cbb114e7d70a"
+    },
+    "unlabeled_pretrain_transactions.jsonl": {
+      "bytes": 149701978,
+      "sha256": "660181aea49a68820f724ba30a1a5cf8ace8158a8aef11bc8446cc577d3466a3"
+    },
+    "valid_labels.csv": {
+      "bytes": 26719,
+      "sha256": "979bd9b69253084fc9e2b1ef473c07a628a8b18091169051ba304cfed0fb5642"
+    },
+    "valid_transactions.jsonl": {
+      "bytes": 14788172,
+      "sha256": "2c30941d49ca20f7b082526407f24529c5a704205610373eff952f4f444a3622"
+    }
+  },
+  "macro_f1": 0.6194934236214421,
+  "accuracy": 0.647,
+  "prediction_sha256": "757b5fc2d4e71e585f232dae28f3a509078083ba40b8d2d49338ed97b376613e",
+  "cached_runs_identical": true,
+  "clean_rebuild_this_round": false,
+  "previous_clean_rebuild_evidence": {
+    "two_independent_raw_data_training_runs": true,
+    "all_predictions_identical": true,
+    "maximum_probability_difference": 0.0,
+    "test_submissions_byte_identical": true,
+    "macro_f1_a": 0.6194934236214421,
+    "macro_f1_b": 0.6194934236214421,
+    "source_sha_a": "330c8858c3525d2443f0b5f598932cde993ce14734fae98c2f7971940ad7374a",
+    "source_sha_b": "a6d0cdb91566d8025e2281d59e1d10fe0b454352df3356cd92364fa161eb24b5",
+    "prediction_source_commit": "ffc656e",
+    "prediction_source_unchanged": true,
+    "source_hash_note": "Full source fingerprints also include research/reporting scripts, which were added between runs; the prediction package is unchanged.",
+    "train_clients": 2000,
+    "validation_used_for_training": false
+  },
+  "policy": "V1 source, tag, submission and historical reports remain unchanged; V2 scripts are additive."
+}
