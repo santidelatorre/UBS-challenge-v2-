@@ -45,6 +45,13 @@ falsification exercise and its limitations.
    wrong-family errors: its mechanism gate fails. No seed expansion or
    official access follows. More permissive candidate recall alone does not
    establish useful identity.
+6. **Missing-candidate indicator alone: reject.** A seed-42 mechanism
+   ablation adds only the redundant `amount0_count < 3` gate, with no sparse
+   transaction evidence. Mean stress F1 changes by -0.004283 with V1 none
+   and -0.004481 with a refitted none detector; sparse accuracy is effectively
+   unchanged. Thus the full sparse gain is not reproduced merely by making
+   the gate explicit. This check was added before official freeze and did
+   not change the selected blend.
 
 ## Revised theory
 
